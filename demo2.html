@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div id="reg">
+			<form action="server.html" method="post">
+				<div>
+					<label for="txtEmail">电子邮箱:</label>
+					<input type="email" id="txtEmail" />
+				</div>
+				<div>
+					<label for="txtUrl">博客地址：</label>
+					<input type="url" id="txtUrl" />
+				</div>
+				<div>
+					<label for="txtAge">年龄:</label>
+					<input type="number" id="txtAge" />
+				</div>
+				<div>
+					<label for="txtBirth">出生日期:</label>
+					<!--<input type="date" id="txtBirth" />-->
+					<input type="datetime-local" id="txtBirth" />
+				</div>
+				<input type="submit" value="注册" />
+			</form>
+		</div>
+	</body>
+</html>

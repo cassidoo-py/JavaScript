@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .menu{
+            width: 30px;
+            height: 30px;
+            line-height: 30px;
+            background-color: #6c9;
+            color: #fff;
+            text-align: center;
+            font-weight: bold;
+            border-radius: 50%;
+            position: relative;
+            left: 608px;
+            top: 237px;
+            float: left;
+        }
+    </style>
+</head>
+<body>
+    <div id="ad" style="width: 728px; height: 267px; background-image: url(../images/scroll-01.jpg); ">
+        <div id="menu1" name="menu" class="menu">1</div>
+        <div id="menu2" name="menu" class="menu">2</div>
+        <div id="menu3" name="menu" class="menu">3</div>
+        <div id="menu4" name="menu" class="menu">4</div>
+    </div>
+    <script>
+        var ad =document.getElementById("ad");
+        //图片索引
+        var index=1;
+        var timer;
+        function changeimage(){
+            //根据索引展示对应的图片
+            ad.style.backgroundImage="url(../images/scroll-0"+index+".jpg)"
+            //修改下标
+            //循环修改4个下标
+            for(var i=1;i<=4;i++){
+                //获取当前的按钮对象
+                var menu=document.getElementById("menu"+i);
+                //判断是否是当前显示的图片对应的按钮
+                if(i==index){
+                    menu.style.color="#6c9";
+                    menu.style.backgroundColor="#fff";
+                }else{
+                    menu.style.color="#fff";
+                    menu.style.backgroundColor="#6c9";
+                }
+            }
+            //更改索引
+            index++;
+            //判断索引是否超出最大值
+            if(index>4){
+                index=1;
+            }
+            timer=window.setTimeout("changeimage()",1000);
+        }
+        var menus =document.getElementsByClassName("menu");
+        for(var i=0;i<menus.length;i++){
+            menus[i].onmouseover=function(){
+                //关闭定时器
+                window.clearTimeout(timer);
+                //修改图片的索引
+                index=this.innerText;
+                //修改背景图片
+                ad.style.backgroundImage="url(../images/scroll-0"+index+".jpg)"
+                //修改下标
+                if(i==index){
+                    menu.style.color="#6c9";
+                    menu.style.backgroundColor="#fff";
+                }else{
+                    menu.style.color="#fff";
+                    menu.style.backgroundColor="#6c9";
+                }
+            }
+        
+        menus[i].onmouseout=function(){
+            //重启
+            changeimage();
+        }
+    }
+        changeimage();
+    </script>
+</body>
+</html>

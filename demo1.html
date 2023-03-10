@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML5表单新元素</title>
+</head>
+<body>
+    <div id="regist">
+        <form action="server.html" method="post">
+        	<div>
+            <label for="textUserName">用户名：</label>
+            <input type="text" id="textUserName" required="required" placeholder="请输入用户名"/>
+            <label for="textpassword">密码：</label>
+            <input type="text" id="textPwd" required placeholder="请输入密码" pattern="[a-zA-Z0-9]{6,20}"/>
+           </div>
+           <div><label for="textProv">省份</label>
+           	<input type="text" id="textProv" list="dl"/>
+           	<datalist id="dl">
+           		<option value="江苏">江苏</option>
+           		<option value="浙江">浙江</option>
+           		<option value="安徽">安徽</option>
+           	</datalist>
+           </div>
+            <input type="submit" value="注册">
+            <!--<button>注册</button>-->
+        </form>
+    </div>
+</body>
+</html>
